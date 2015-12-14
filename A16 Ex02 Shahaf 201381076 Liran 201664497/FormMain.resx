@@ -130,7 +130,7 @@
     <value>17, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pictureBoxPlaceToolTip.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAABxRJREFUeF7t
         mt9vFFUUx/kvfPTBJ4F2CyaG8CM+ECi8iJZACZG2lKgRg9oHCRYjJpooIrTCgxJIY8LPGIK1bQQk/IoG
@@ -166,7 +166,7 @@
         zzFt2v+Y99LHhk5PXQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="pictureBoxGraph.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pictureBoxGraphTooltip.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAABxRJREFUeF7t
         mt9vFFUUx/kvfPTBJ4F2CyaG8CM+ECi8iJZACZG2lKgRg9oHCRYjJpooIrTCgxJIY8LPGIK1bQQk/IoG

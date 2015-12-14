@@ -30,14 +30,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.textBoxStatus = new System.Windows.Forms.TextBox();
             this.buttonPost = new System.Windows.Forms.Button();
             this.tabControlUserData = new System.Windows.Forms.TabControl();
@@ -60,33 +60,31 @@
             this.isOpenColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBoxKeyWord = new System.Windows.Forms.TextBox();
             this.labelUserName = new System.Windows.Forms.Label();
-            this.chartAvgLikesPerHour = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.checkBoxCheckin = new System.Windows.Forms.CheckBox();
             this.labelLastCheckinPlace = new System.Windows.Forms.Label();
             this.toolTipDescription = new System.Windows.Forms.ToolTip(this.components);
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxGraph = new System.Windows.Forms.PictureBox();
+            this.pictureBoxPlaceToolTip = new System.Windows.Forms.PictureBox();
+            this.pictureBoxGraphTooltip = new System.Windows.Forms.PictureBox();
             this.pictureBoxUser = new System.Windows.Forms.PictureBox();
             this.pictureBoxLoadingGif = new System.Windows.Forms.PictureBox();
             this.buttonAvgLikes = new System.Windows.Forms.Button();
             this.buttonGiveMePlaces = new System.Windows.Forms.Button();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.UserPictureBox = new System.Windows.Forms.PictureBox();
-            this.listBoxStatus = new System.Windows.Forms.ListBox();
+            this.chartAvgLikesPerHour = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabControlUserData.SuspendLayout();
-            this.tabWall.SuspendLayout();
             this.tabEvents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEventPicture)).BeginInit();
             this.tabFriends.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFriendPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarRadius)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewPlacesList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartAvgLikesPerHour)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGraph)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlaceToolTip)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGraphTooltip)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingGif)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartAvgLikesPerHour)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxStatus
@@ -134,8 +132,9 @@
             // 
             // tabWall
             // 
+            this.tabWall.AutoScroll = true;
+            this.tabWall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(89)))), ((int)(((byte)(152)))));
             this.tabWall.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tabWall.Controls.Add(this.listBoxStatus);
             this.tabWall.Location = new System.Drawing.Point(4, 34);
             this.tabWall.Name = "tabWall";
             this.tabWall.Padding = new System.Windows.Forms.Padding(3);
@@ -288,41 +287,41 @@
             this.gridViewPlacesList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.gridViewPlacesList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.gridViewPlacesList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridViewPlacesList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridViewPlacesList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.gridViewPlacesList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridViewPlacesList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.placeNameColumn,
             this.addressColumn,
             this.isOpenColumn});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridViewPlacesList.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridViewPlacesList.DefaultCellStyle = dataGridViewCellStyle14;
             this.gridViewPlacesList.EnableHeadersVisualStyles = false;
             this.gridViewPlacesList.GridColor = System.Drawing.Color.Gray;
             this.gridViewPlacesList.Location = new System.Drawing.Point(482, 428);
             this.gridViewPlacesList.MultiSelect = false;
             this.gridViewPlacesList.Name = "gridViewPlacesList";
             this.gridViewPlacesList.ReadOnly = true;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridViewPlacesList.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridViewPlacesList.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.gridViewPlacesList.RowHeadersVisible = false;
             this.gridViewPlacesList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridViewPlacesList.Size = new System.Drawing.Size(554, 212);
@@ -332,8 +331,8 @@
             // placeNameColumn
             // 
             this.placeNameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.placeNameColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.placeNameColumn.DefaultCellStyle = dataGridViewCellStyle12;
             this.placeNameColumn.HeaderText = "Place Name";
             this.placeNameColumn.Name = "placeNameColumn";
             this.placeNameColumn.ReadOnly = true;
@@ -350,8 +349,8 @@
             // isOpenColumn
             // 
             this.isOpenColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.isOpenColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.isOpenColumn.DefaultCellStyle = dataGridViewCellStyle13;
             this.isOpenColumn.HeaderText = "Open/Close";
             this.isOpenColumn.Name = "isOpenColumn";
             this.isOpenColumn.ReadOnly = true;
@@ -373,31 +372,6 @@
             this.labelUserName.TabIndex = 0;
             this.labelUserName.Text = "User Name";
             this.labelUserName.Visible = false;
-            // 
-            // chartAvgLikesPerHour
-            // 
-            this.chartAvgLikesPerHour.BackColor = System.Drawing.Color.Transparent;
-            this.chartAvgLikesPerHour.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Bottom;
-            this.chartAvgLikesPerHour.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea2.BackSecondaryColor = System.Drawing.Color.Transparent;
-            chartArea2.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea2.Name = "ChartArea";
-            chartArea2.Visible = false;
-            this.chartAvgLikesPerHour.ChartAreas.Add(chartArea2);
-            this.chartAvgLikesPerHour.Location = new System.Drawing.Point(601, 100);
-            this.chartAvgLikesPerHour.Name = "chartAvgLikesPerHour";
-            this.chartAvgLikesPerHour.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series2.ChartArea = "ChartArea";
-            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(89)))), ((int)(((byte)(152)))));
-            series2.IsVisibleInLegend = false;
-            series2.IsXValueIndexed = true;
-            series2.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            series2.Name = "AvgLikesPerHour";
-            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.UInt32;
-            series2.YValuesPerPoint = 2;
-            this.chartAvgLikesPerHour.Series.Add(series2);
-            this.chartAvgLikesPerHour.Size = new System.Drawing.Size(435, 226);
-            this.chartAvgLikesPerHour.TabIndex = 1019;
             // 
             // checkBoxCheckin
             // 
@@ -430,29 +404,29 @@
             this.toolTipDescription.ShowAlways = true;
             this.toolTipDescription.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
-            // pictureBox2
+            // pictureBoxPlaceToolTip
             // 
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(972, 368);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1025;
-            this.pictureBox2.TabStop = false;
-            this.toolTipDescription.SetToolTip(this.pictureBox2, "Press for near places.");
+            this.pictureBoxPlaceToolTip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxPlaceToolTip.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPlaceToolTip.Image")));
+            this.pictureBoxPlaceToolTip.Location = new System.Drawing.Point(972, 368);
+            this.pictureBoxPlaceToolTip.Name = "pictureBoxPlaceToolTip";
+            this.pictureBoxPlaceToolTip.Size = new System.Drawing.Size(25, 25);
+            this.pictureBoxPlaceToolTip.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxPlaceToolTip.TabIndex = 1025;
+            this.pictureBoxPlaceToolTip.TabStop = false;
+            this.toolTipDescription.SetToolTip(this.pictureBoxPlaceToolTip, "Press for near places.");
             // 
-            // pictureBoxGraph
+            // pictureBoxGraphTooltip
             // 
-            this.pictureBoxGraph.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBoxGraph.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxGraph.Image")));
-            this.pictureBoxGraph.Location = new System.Drawing.Point(486, 127);
-            this.pictureBoxGraph.Name = "pictureBoxGraph";
-            this.pictureBoxGraph.Size = new System.Drawing.Size(25, 25);
-            this.pictureBoxGraph.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxGraph.TabIndex = 1024;
-            this.pictureBoxGraph.TabStop = false;
-            this.toolTipDescription.SetToolTip(this.pictureBoxGraph, "Press to get your likes statictics");
+            this.pictureBoxGraphTooltip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBoxGraphTooltip.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxGraphTooltip.Image")));
+            this.pictureBoxGraphTooltip.Location = new System.Drawing.Point(486, 127);
+            this.pictureBoxGraphTooltip.Name = "pictureBoxGraphTooltip";
+            this.pictureBoxGraphTooltip.Size = new System.Drawing.Size(25, 25);
+            this.pictureBoxGraphTooltip.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxGraphTooltip.TabIndex = 1024;
+            this.pictureBoxGraphTooltip.TabStop = false;
+            this.toolTipDescription.SetToolTip(this.pictureBoxGraphTooltip, "Press to get your likes statictics");
             // 
             // pictureBoxUser
             // 
@@ -530,18 +504,30 @@
             this.UserPictureBox.TabIndex = 0;
             this.UserPictureBox.TabStop = false;
             // 
-            // listBoxStatus
+            // chartAvgLikesPerHour
             // 
-            this.listBoxStatus.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBoxStatus.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.listBoxStatus.Font = new System.Drawing.Font("Tahoma", 9.75F);
-            this.listBoxStatus.FormattingEnabled = true;
-            this.listBoxStatus.ItemHeight = 16;
-            this.listBoxStatus.Location = new System.Drawing.Point(3, 3);
-            this.listBoxStatus.Name = "listBoxStatus";
-            this.listBoxStatus.Size = new System.Drawing.Size(397, 336);
-            this.listBoxStatus.TabIndex = 12;
+            this.chartAvgLikesPerHour.BackColor = System.Drawing.Color.Transparent;
+            this.chartAvgLikesPerHour.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Bottom;
+            this.chartAvgLikesPerHour.BorderlineColor = System.Drawing.Color.Transparent;
+            chartArea2.BackSecondaryColor = System.Drawing.Color.Transparent;
+            chartArea2.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            chartArea2.Name = "ChartArea";
+            chartArea2.Visible = false;
+            this.chartAvgLikesPerHour.ChartAreas.Add(chartArea2);
+            this.chartAvgLikesPerHour.Location = new System.Drawing.Point(601, 100);
+            this.chartAvgLikesPerHour.Name = "chartAvgLikesPerHour";
+            this.chartAvgLikesPerHour.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            series2.ChartArea = "ChartArea";
+            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(89)))), ((int)(((byte)(152)))));
+            series2.IsVisibleInLegend = false;
+            series2.IsXValueIndexed = true;
+            series2.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            series2.Name = "AvgLikesPerHour";
+            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.UInt32;
+            series2.YValuesPerPoint = 2;
+            this.chartAvgLikesPerHour.Series.Add(series2);
+            this.chartAvgLikesPerHour.Size = new System.Drawing.Size(435, 226);
+            this.chartAvgLikesPerHour.TabIndex = 1019;
             // 
             // FormMain
             // 
@@ -549,8 +535,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1080, 657);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBoxGraph);
+            this.Controls.Add(this.pictureBoxPlaceToolTip);
+            this.Controls.Add(this.pictureBoxGraphTooltip);
             this.Controls.Add(this.pictureBoxUser);
             this.Controls.Add(this.pictureBoxLoadingGif);
             this.Controls.Add(this.labelLastCheckinPlace);
@@ -576,7 +562,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Faecbook";
             this.tabControlUserData.ResumeLayout(false);
-            this.tabWall.ResumeLayout(false);
             this.tabEvents.ResumeLayout(false);
             this.tabEvents.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEventPicture)).EndInit();
@@ -584,12 +569,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFriendPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarRadius)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewPlacesList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartAvgLikesPerHour)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGraph)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlaceToolTip)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGraphTooltip)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoadingGif)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UserPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartAvgLikesPerHour)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -622,15 +607,14 @@
         private System.Windows.Forms.Label labelSelectedEventLocation;
         private System.Windows.Forms.Label labelSelectedEventDate;
         private System.Windows.Forms.Button buttonAvgLikes;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartAvgLikesPerHour;
         private System.Windows.Forms.Label labelEventDescription;
         private System.Windows.Forms.CheckBox checkBoxCheckin;
         private System.Windows.Forms.Label labelLastCheckinPlace;
         private System.Windows.Forms.PictureBox pictureBoxLoadingGif;
         private System.Windows.Forms.PictureBox pictureBoxUser;
-        private System.Windows.Forms.PictureBox pictureBoxGraph;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBoxGraphTooltip;
+        private System.Windows.Forms.PictureBox pictureBoxPlaceToolTip;
         private System.Windows.Forms.ToolTip toolTipDescription;
-        private System.Windows.Forms.ListBox listBoxStatus;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartAvgLikesPerHour;
     }
 }

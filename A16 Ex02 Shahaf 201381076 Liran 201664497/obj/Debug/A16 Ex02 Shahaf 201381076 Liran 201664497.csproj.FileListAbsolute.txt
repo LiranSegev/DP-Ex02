@@ -1,0 +1,11 @@
+C:\Users\Liran\Desktop\A16 Ex02 ShahafShuhamy 201381076 LiranSegev 201664497\A16 Ex02 Shahaf 201381076 Liran 201664497\bin\Debug\A16 Ex01 Shahaf 201381076 Liran 201664497.exe
+C:\Users\Liran\Desktop\A16 Ex02 ShahafShuhamy 201381076 LiranSegev 201664497\A16 Ex02 Shahaf 201381076 Liran 201664497\bin\Debug\A16 Ex01 Shahaf 201381076 Liran 201664497.pdb
+C:\Users\Liran\Desktop\A16 Ex02 ShahafShuhamy 201381076 LiranSegev 201664497\A16 Ex02 Shahaf 201381076 Liran 201664497\bin\Debug\Facebook.dll
+C:\Users\Liran\Desktop\A16 Ex02 ShahafShuhamy 201381076 LiranSegev 201664497\A16 Ex02 Shahaf 201381076 Liran 201664497\bin\Debug\FbGraphApiWrapper.dll
+C:\Users\Liran\Desktop\A16 Ex02 ShahafShuhamy 201381076 LiranSegev 201664497\A16 Ex02 Shahaf 201381076 Liran 201664497\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Liran\Desktop\A16 Ex02 ShahafShuhamy 201381076 LiranSegev 201664497\A16 Ex02 Shahaf 201381076 Liran 201664497\obj\Debug\A16 Ex02 Shahaf 201381076 Liran 201664497.csprojResolveAssemblyReference.cache
+C:\Users\Liran\Desktop\A16 Ex02 ShahafShuhamy 201381076 LiranSegev 201664497\A16 Ex02 Shahaf 201381076 Liran 201664497\obj\Debug\A16_Ex01_Shahaf_201381076_Liran_201664497.FormMain.resources
+C:\Users\Liran\Desktop\A16 Ex02 ShahafShuhamy 201381076 LiranSegev 201664497\A16 Ex02 Shahaf 201381076 Liran 201664497\obj\Debug\A16_Ex01_Shahaf_201381076_Liran_201664497.Properties.Resources.resources
+C:\Users\Liran\Desktop\A16 Ex02 ShahafShuhamy 201381076 LiranSegev 201664497\A16 Ex02 Shahaf 201381076 Liran 201664497\obj\Debug\A16 Ex02 Shahaf 201381076 Liran 201664497.csproj.GenerateResource.Cache
+C:\Users\Liran\Desktop\A16 Ex02 ShahafShuhamy 201381076 LiranSegev 201664497\A16 Ex02 Shahaf 201381076 Liran 201664497\obj\Debug\A16 Ex01 Shahaf 201381076 Liran 201664497.exe
+C:\Users\Liran\Desktop\A16 Ex02 ShahafShuhamy 201381076 LiranSegev 201664497\A16 Ex02 Shahaf 201381076 Liran 201664497\obj\Debug\A16 Ex01 Shahaf 201381076 Liran 201664497.pdb

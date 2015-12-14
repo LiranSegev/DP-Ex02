@@ -54,8 +54,21 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
 
         private void listBoxPostsFilling()
         {
-            listBoxStatus.DisplayMember = "Message";
-            listBoxStatus.DataSource = Controller.GetUnEmptyUserPosts();
+            FacebookObjectCollection<Post> posts = Controller.GetUnEmptyUserPosts();
+            int top = 0;
+
+            foreach (Post post in posts)
+            {
+                StatusComponent statusComponent = new StatusComponent(new Size(tabWall.Width, 50));
+                tabWall.Controls.Add(statusComponent);
+                statusComponent.Top = top;
+                statusComponent.m_LabelStatus.Text = post.Message;
+                statusComponent.m_LabelLikes.Text = post.LikedBy.Count.ToString();
+                statusComponent.m_LabelDate.Text = post.CreatedTime.ToString();
+                
+
+                top = statusComponent.Bottom + 5;
+            }
         }
 
         private void listBoxFriendsFilling()
