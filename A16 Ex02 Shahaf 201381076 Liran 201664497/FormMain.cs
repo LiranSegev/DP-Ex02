@@ -7,9 +7,9 @@ using FacebookWrapper.ObjectModel;
 
 namespace A16_Ex01_Shahaf_201381076_Liran_201664497
 {
-    public partial class FormMain : Form
+    public partial class formMain : Form
     {
-        public FormMain()
+        public formMain()
         {
             InitializeComponent();
             FacebookWrapper.FacebookService.s_CollectionLimit = 100;
@@ -25,11 +25,22 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
                 labelUserName.Visible = true;
                 setButtonsVisible();
                 fetchUserPicture();
-                listBoxPostsFilling();
-                listBoxEventsFilling();
-                listBoxFriendsFilling();
+                new Thread(addTabsItems).Start();
             }
         }
+
+        private void addTabsItems()
+        {
+            tabControlUserData.Invoke(new Action(
+                () =>
+                {
+                    listBoxPostsFilling();
+                    listBoxEventsFilling();
+                    listBoxFriendsFilling();
+                }
+                        ));
+        }
+
         private void setButtonsVisible()
         {
             foreach (Control control in this.Controls)
@@ -66,7 +77,7 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
                 statusComponent.m_LabelStatus.Text = post.Message;
                 statusComponent.m_LabelLikes.Text = post.LikedBy.Count.ToString();
                 statusComponent.m_LabelDate.Text = post.CreatedTime.ToString();
-                
+
 
                 top = statusComponent.Bottom + 5;
             }
@@ -82,15 +93,6 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
         {
             ShowFriendPicture();
         }
-
-        //private void listBoxEvents_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    Event selectedEvent = listBoxEvents.SelectedItem as Event;
-        //    pictureBoxEventPicture.LoadAsync(selectedEvent.PictureNormalURL);
-        //    labelSelectedEventDate.Text = string.Format("Date : {0}", selectedEvent.StartTime.ToString());
-        //    labelSelectedEventLocation.Text = string.Format("Location : {0}", selectedEvent.Location);
-        //    labelEventDescription.Text = string.Format("Description : {0}", selectedEvent.Description);
-        //}
 
         private void ShowFriendPicture()
         {

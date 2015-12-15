@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
 namespace A16_Ex01_Shahaf_201381076_Liran_201664497
 {
-    public partial class FormMain
+    public partial class formMain
     {
         /// <summary>
         /// Required designer variable.
@@ -41,7 +41,7 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMain));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.textBoxStatus = new System.Windows.Forms.TextBox();
@@ -49,7 +49,7 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
             this.tabControlUserData = new System.Windows.Forms.TabControl();
             this.tabWall = new System.Windows.Forms.TabPage();
             this.tabEvents = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelEventDetails = new System.Windows.Forms.Panel();
             this.lableName = new System.Windows.Forms.Label();
             this.eventBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lableEndTime = new System.Windows.Forms.Label();
@@ -89,7 +89,7 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
             locationLabel = new System.Windows.Forms.Label();
             this.tabControlUserData.SuspendLayout();
             this.tabEvents.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panelEventDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageNormalPictureBox)).BeginInit();
             this.tabFriends.SuspendLayout();
@@ -117,7 +117,7 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
             // 
             linkToFacebookLabel.AutoSize = true;
             linkToFacebookLabel.Font = new System.Drawing.Font("Tahoma", 8F);
-            linkToFacebookLabel.Location = new System.Drawing.Point(9, 144);
+            linkToFacebookLabel.Location = new System.Drawing.Point(20, 140);
             linkToFacebookLabel.Name = "linkToFacebookLabel";
             linkToFacebookLabel.Size = new System.Drawing.Size(93, 13);
             linkToFacebookLabel.TabIndex = 6;
@@ -186,7 +186,7 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
             this.tabControlUserData.Controls.Add(this.tabFriends);
             this.tabControlUserData.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControlUserData.ItemSize = new System.Drawing.Size(100, 30);
-            this.tabControlUserData.Location = new System.Drawing.Point(13, 322);
+            this.tabControlUserData.Location = new System.Drawing.Point(12, 253);
             this.tabControlUserData.Name = "tabControlUserData";
             this.tabControlUserData.SelectedIndex = 0;
             this.tabControlUserData.Size = new System.Drawing.Size(413, 402);
@@ -207,7 +207,7 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
             // 
             // tabEvents
             // 
-            this.tabEvents.Controls.Add(this.panel1);
+            this.tabEvents.Controls.Add(this.panelEventDetails);
             this.tabEvents.Controls.Add(this.listBoxEvents);
             this.tabEvents.Location = new System.Drawing.Point(4, 34);
             this.tabEvents.Name = "tabEvents";
@@ -218,24 +218,24 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
             this.tabEvents.Text = "Events";
             this.tabEvents.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // panelEventDetails
             // 
-            this.panel1.Controls.Add(nameLabel);
-            this.panel1.Controls.Add(this.lableName);
-            this.panel1.Controls.Add(endTimeLabel);
-            this.panel1.Controls.Add(this.lableEndTime);
-            this.panel1.Controls.Add(this.imageNormalPictureBox);
-            this.panel1.Controls.Add(linkToFacebookLabel);
-            this.panel1.Controls.Add(this.linkLableLink);
-            this.panel1.Controls.Add(locationLabel);
-            this.panel1.Controls.Add(this.labelLocation);
-            this.panel1.Controls.Add(startTimeLabel);
-            this.panel1.Controls.Add(this.lableStartTime);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 195);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(399, 166);
-            this.panel1.TabIndex = 1026;
+            this.panelEventDetails.Controls.Add(nameLabel);
+            this.panelEventDetails.Controls.Add(this.lableName);
+            this.panelEventDetails.Controls.Add(endTimeLabel);
+            this.panelEventDetails.Controls.Add(this.lableEndTime);
+            this.panelEventDetails.Controls.Add(this.imageNormalPictureBox);
+            this.panelEventDetails.Controls.Add(linkToFacebookLabel);
+            this.panelEventDetails.Controls.Add(this.linkLableLink);
+            this.panelEventDetails.Controls.Add(locationLabel);
+            this.panelEventDetails.Controls.Add(this.labelLocation);
+            this.panelEventDetails.Controls.Add(startTimeLabel);
+            this.panelEventDetails.Controls.Add(this.lableStartTime);
+            this.panelEventDetails.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelEventDetails.Location = new System.Drawing.Point(3, 195);
+            this.panelEventDetails.Name = "panelEventDetails";
+            this.panelEventDetails.Size = new System.Drawing.Size(399, 166);
+            this.panelEventDetails.TabIndex = 1026;
             // 
             // lableName
             // 
@@ -273,7 +273,7 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
             this.linkLableLink.AutoSize = true;
             this.linkLableLink.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eventBindingSource, "LinkToFacebook", true));
             this.linkLableLink.Font = new System.Drawing.Font("Tahoma", 8F);
-            this.linkLableLink.Location = new System.Drawing.Point(108, 144);
+            this.linkLableLink.Location = new System.Drawing.Point(119, 140);
             this.linkLableLink.Name = "linkLableLink";
             this.linkLableLink.Size = new System.Drawing.Size(25, 13);
             this.linkLableLink.TabIndex = 7;
@@ -627,13 +627,13 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
             this.chartAvgLikesPerHour.Size = new System.Drawing.Size(435, 226);
             this.chartAvgLikesPerHour.TabIndex = 1019;
             // 
-            // FormMain
+            // formMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(1100, 728);
+            this.ClientSize = new System.Drawing.Size(1100, 667);
             this.Controls.Add(this.pictureBoxPlaceToolTip);
             this.Controls.Add(this.pictureBoxGraphTooltip);
             this.Controls.Add(this.pictureBoxUser);
@@ -657,13 +657,13 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "FormMain";
+            this.Name = "formMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Faecbook";
             this.tabControlUserData.ResumeLayout(false);
             this.tabEvents.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelEventDetails.ResumeLayout(false);
+            this.panelEventDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageNormalPictureBox)).EndInit();
             this.tabFriends.ResumeLayout(false);
@@ -714,7 +714,7 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
         private System.Windows.Forms.ToolTip toolTipDescription;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartAvgLikesPerHour;
         private System.Windows.Forms.BindingSource eventBindingSource;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelEventDetails;
         private System.Windows.Forms.Label lableEndTime;
         private System.Windows.Forms.PictureBox imageNormalPictureBox;
         private System.Windows.Forms.LinkLabel linkLableLink;
