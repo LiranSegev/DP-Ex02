@@ -49,7 +49,8 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
         private void listBoxEventsFilling()
         {
             listBoxEvents.DisplayMember = "Name";
-            listBoxEvents.DataSource = Controller.GetUserEvents();
+            eventBindingSource.DataSource = Controller.GetUserEvents();
+
         }
 
         private void listBoxPostsFilling()
@@ -82,14 +83,14 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
             ShowFriendPicture();
         }
 
-        private void listBoxEvents_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Event selectedEvent = listBoxEvents.SelectedItem as Event;
-            pictureBoxEventPicture.LoadAsync(selectedEvent.PictureNormalURL);
-            labelSelectedEventDate.Text = string.Format("Date : {0}", selectedEvent.StartTime.ToString());
-            labelSelectedEventLocation.Text = string.Format("Location : {0}", selectedEvent.Location);
-            labelEventDescription.Text = string.Format("Description : {0}", selectedEvent.Description);
-        }
+        //private void listBoxEvents_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    Event selectedEvent = listBoxEvents.SelectedItem as Event;
+        //    pictureBoxEventPicture.LoadAsync(selectedEvent.PictureNormalURL);
+        //    labelSelectedEventDate.Text = string.Format("Date : {0}", selectedEvent.StartTime.ToString());
+        //    labelSelectedEventLocation.Text = string.Format("Location : {0}", selectedEvent.Location);
+        //    labelEventDescription.Text = string.Format("Description : {0}", selectedEvent.Description);
+        //}
 
         private void ShowFriendPicture()
         {

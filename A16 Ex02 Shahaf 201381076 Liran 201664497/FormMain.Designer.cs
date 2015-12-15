@@ -1,4 +1,5 @@
-﻿namespace A16_Ex01_Shahaf_201381076_Liran_201664497
+﻿using System.Windows.Forms;
+namespace A16_Ex01_Shahaf_201381076_Liran_201664497
 {
     public partial class FormMain
     {
@@ -30,23 +31,32 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.Label endTimeLabel;
+            System.Windows.Forms.Label linkToFacebookLabel;
+            System.Windows.Forms.Label startTimeLabel;
+            System.Windows.Forms.Label nameLabel;
+            System.Windows.Forms.Label locationLabel;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.textBoxStatus = new System.Windows.Forms.TextBox();
             this.buttonPost = new System.Windows.Forms.Button();
             this.tabControlUserData = new System.Windows.Forms.TabControl();
             this.tabWall = new System.Windows.Forms.TabPage();
             this.tabEvents = new System.Windows.Forms.TabPage();
-            this.labelEventDescription = new System.Windows.Forms.Label();
-            this.labelSelectedEventLocation = new System.Windows.Forms.Label();
-            this.labelSelectedEventDate = new System.Windows.Forms.Label();
-            this.pictureBoxEventPicture = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lableName = new System.Windows.Forms.Label();
+            this.eventBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lableEndTime = new System.Windows.Forms.Label();
+            this.imageNormalPictureBox = new System.Windows.Forms.PictureBox();
+            this.linkLableLink = new System.Windows.Forms.LinkLabel();
+            this.labelLocation = new System.Windows.Forms.Label();
+            this.lableStartTime = new System.Windows.Forms.Label();
             this.listBoxEvents = new System.Windows.Forms.ListBox();
             this.tabFriends = new System.Windows.Forms.TabPage();
             this.pictureBoxFriendPic = new System.Windows.Forms.PictureBox();
@@ -72,9 +82,16 @@
             this.buttonLogin = new System.Windows.Forms.Button();
             this.UserPictureBox = new System.Windows.Forms.PictureBox();
             this.chartAvgLikesPerHour = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            endTimeLabel = new System.Windows.Forms.Label();
+            linkToFacebookLabel = new System.Windows.Forms.Label();
+            startTimeLabel = new System.Windows.Forms.Label();
+            nameLabel = new System.Windows.Forms.Label();
+            locationLabel = new System.Windows.Forms.Label();
             this.tabControlUserData.SuspendLayout();
             this.tabEvents.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEventPicture)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageNormalPictureBox)).BeginInit();
             this.tabFriends.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFriendPic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarRadius)).BeginInit();
@@ -86,6 +103,52 @@
             ((System.ComponentModel.ISupportInitialize)(this.UserPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartAvgLikesPerHour)).BeginInit();
             this.SuspendLayout();
+            // 
+            // endTimeLabel
+            // 
+            endTimeLabel.AutoSize = true;
+            endTimeLabel.Location = new System.Drawing.Point(19, 89);
+            endTimeLabel.Name = "endTimeLabel";
+            endTimeLabel.Size = new System.Drawing.Size(83, 19);
+            endTimeLabel.TabIndex = 2;
+            endTimeLabel.Text = "End Time:";
+            // 
+            // linkToFacebookLabel
+            // 
+            linkToFacebookLabel.AutoSize = true;
+            linkToFacebookLabel.Font = new System.Drawing.Font("Tahoma", 8F);
+            linkToFacebookLabel.Location = new System.Drawing.Point(9, 144);
+            linkToFacebookLabel.Name = "linkToFacebookLabel";
+            linkToFacebookLabel.Size = new System.Drawing.Size(93, 13);
+            linkToFacebookLabel.TabIndex = 6;
+            linkToFacebookLabel.Text = "Link To Facebook:";
+            // 
+            // startTimeLabel
+            // 
+            startTimeLabel.AutoSize = true;
+            startTimeLabel.Location = new System.Drawing.Point(19, 66);
+            startTimeLabel.Name = "startTimeLabel";
+            startTimeLabel.Size = new System.Drawing.Size(89, 19);
+            startTimeLabel.TabIndex = 12;
+            startTimeLabel.Text = "Start Time:";
+            // 
+            // nameLabel
+            // 
+            nameLabel.AutoSize = true;
+            nameLabel.Location = new System.Drawing.Point(19, 14);
+            nameLabel.Name = "nameLabel";
+            nameLabel.Size = new System.Drawing.Size(56, 19);
+            nameLabel.TabIndex = 14;
+            nameLabel.Text = "Name:";
+            // 
+            // locationLabel
+            // 
+            locationLabel.AutoSize = true;
+            locationLabel.Location = new System.Drawing.Point(19, 37);
+            locationLabel.Name = "locationLabel";
+            locationLabel.Size = new System.Drawing.Size(74, 19);
+            locationLabel.TabIndex = 8;
+            locationLabel.Text = "Location:";
             // 
             // textBoxStatus
             // 
@@ -123,7 +186,7 @@
             this.tabControlUserData.Controls.Add(this.tabFriends);
             this.tabControlUserData.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControlUserData.ItemSize = new System.Drawing.Size(100, 30);
-            this.tabControlUserData.Location = new System.Drawing.Point(13, 242);
+            this.tabControlUserData.Location = new System.Drawing.Point(13, 322);
             this.tabControlUserData.Name = "tabControlUserData";
             this.tabControlUserData.SelectedIndex = 0;
             this.tabControlUserData.Size = new System.Drawing.Size(413, 402);
@@ -144,10 +207,7 @@
             // 
             // tabEvents
             // 
-            this.tabEvents.Controls.Add(this.labelEventDescription);
-            this.tabEvents.Controls.Add(this.labelSelectedEventLocation);
-            this.tabEvents.Controls.Add(this.labelSelectedEventDate);
-            this.tabEvents.Controls.Add(this.pictureBoxEventPicture);
+            this.tabEvents.Controls.Add(this.panel1);
             this.tabEvents.Controls.Add(this.listBoxEvents);
             this.tabEvents.Location = new System.Drawing.Point(4, 34);
             this.tabEvents.Name = "tabEvents";
@@ -158,51 +218,90 @@
             this.tabEvents.Text = "Events";
             this.tabEvents.UseVisualStyleBackColor = true;
             // 
-            // labelEventDescription
+            // panel1
             // 
-            this.labelEventDescription.BackColor = System.Drawing.Color.Transparent;
-            this.labelEventDescription.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelEventDescription.Location = new System.Drawing.Point(174, 277);
-            this.labelEventDescription.Name = "labelEventDescription";
-            this.labelEventDescription.Size = new System.Drawing.Size(214, 65);
-            this.labelEventDescription.TabIndex = 1017;
-            this.labelEventDescription.Text = "Description";
+            this.panel1.Controls.Add(nameLabel);
+            this.panel1.Controls.Add(this.lableName);
+            this.panel1.Controls.Add(endTimeLabel);
+            this.panel1.Controls.Add(this.lableEndTime);
+            this.panel1.Controls.Add(this.imageNormalPictureBox);
+            this.panel1.Controls.Add(linkToFacebookLabel);
+            this.panel1.Controls.Add(this.linkLableLink);
+            this.panel1.Controls.Add(locationLabel);
+            this.panel1.Controls.Add(this.labelLocation);
+            this.panel1.Controls.Add(startTimeLabel);
+            this.panel1.Controls.Add(this.lableStartTime);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 195);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(399, 166);
+            this.panel1.TabIndex = 1026;
             // 
-            // labelSelectedEventLocation
+            // lableName
             // 
-            this.labelSelectedEventLocation.AutoSize = true;
-            this.labelSelectedEventLocation.BackColor = System.Drawing.Color.Transparent;
-            this.labelSelectedEventLocation.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelSelectedEventLocation.Location = new System.Drawing.Point(174, 253);
-            this.labelSelectedEventLocation.Name = "labelSelectedEventLocation";
-            this.labelSelectedEventLocation.Size = new System.Drawing.Size(68, 19);
-            this.labelSelectedEventLocation.TabIndex = 1016;
-            this.labelSelectedEventLocation.Text = "Location";
+            this.lableName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eventBindingSource, "Name", true));
+            this.lableName.Location = new System.Drawing.Point(122, 14);
+            this.lableName.Name = "lableName";
+            this.lableName.Size = new System.Drawing.Size(100, 23);
+            this.lableName.TabIndex = 15;
+            this.lableName.Text = "Name";
             // 
-            // labelSelectedEventDate
+            // eventBindingSource
             // 
-            this.labelSelectedEventDate.AutoSize = true;
-            this.labelSelectedEventDate.BackColor = System.Drawing.Color.Transparent;
-            this.labelSelectedEventDate.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelSelectedEventDate.Location = new System.Drawing.Point(174, 229);
-            this.labelSelectedEventDate.Name = "labelSelectedEventDate";
-            this.labelSelectedEventDate.Size = new System.Drawing.Size(41, 19);
-            this.labelSelectedEventDate.TabIndex = 1015;
-            this.labelSelectedEventDate.Text = "Date";
+            this.eventBindingSource.DataSource = typeof(FacebookWrapper.ObjectModel.Event);
             // 
-            // pictureBoxEventPicture
+            // lableEndTime
             // 
-            this.pictureBoxEventPicture.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBoxEventPicture.Location = new System.Drawing.Point(15, 229);
-            this.pictureBoxEventPicture.Name = "pictureBoxEventPicture";
-            this.pictureBoxEventPicture.Size = new System.Drawing.Size(134, 122);
-            this.pictureBoxEventPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxEventPicture.TabIndex = 1015;
-            this.pictureBoxEventPicture.TabStop = false;
+            this.lableEndTime.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eventBindingSource, "EndTime", true));
+            this.lableEndTime.Location = new System.Drawing.Point(122, 89);
+            this.lableEndTime.Name = "lableEndTime";
+            this.lableEndTime.Size = new System.Drawing.Size(100, 23);
+            this.lableEndTime.TabIndex = 3;
+            this.lableEndTime.Text = "EndTime";
+            // 
+            // imageNormalPictureBox
+            // 
+            this.imageNormalPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.eventBindingSource, "ImageNormal", true));
+            this.imageNormalPictureBox.Location = new System.Drawing.Point(255, 14);
+            this.imageNormalPictureBox.Name = "imageNormalPictureBox";
+            this.imageNormalPictureBox.Size = new System.Drawing.Size(120, 120);
+            this.imageNormalPictureBox.TabIndex = 5;
+            this.imageNormalPictureBox.TabStop = false;
+            // 
+            // linkLableLink
+            // 
+            this.linkLableLink.AutoSize = true;
+            this.linkLableLink.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eventBindingSource, "LinkToFacebook", true));
+            this.linkLableLink.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.linkLableLink.Location = new System.Drawing.Point(108, 144);
+            this.linkLableLink.Name = "linkLableLink";
+            this.linkLableLink.Size = new System.Drawing.Size(25, 13);
+            this.linkLableLink.TabIndex = 7;
+            this.linkLableLink.TabStop = true;
+            this.linkLableLink.Text = "Link";
+            // 
+            // labelLocation
+            // 
+            this.labelLocation.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eventBindingSource, "Location", true));
+            this.labelLocation.Location = new System.Drawing.Point(122, 37);
+            this.labelLocation.Name = "labelLocation";
+            this.labelLocation.Size = new System.Drawing.Size(100, 23);
+            this.labelLocation.TabIndex = 9;
+            this.labelLocation.Text = "Location";
+            // 
+            // lableStartTime
+            // 
+            this.lableStartTime.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.eventBindingSource, "StartTime", true));
+            this.lableStartTime.Location = new System.Drawing.Point(122, 66);
+            this.lableStartTime.Name = "lableStartTime";
+            this.lableStartTime.Size = new System.Drawing.Size(100, 23);
+            this.lableStartTime.TabIndex = 13;
+            this.lableStartTime.Text = "StartTime";
             // 
             // listBoxEvents
             // 
             this.listBoxEvents.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBoxEvents.DataSource = this.eventBindingSource;
             this.listBoxEvents.Dock = System.Windows.Forms.DockStyle.Top;
             this.listBoxEvents.Font = new System.Drawing.Font("Tahoma", 9.75F);
             this.listBoxEvents.FormattingEnabled = true;
@@ -211,7 +310,6 @@
             this.listBoxEvents.Name = "listBoxEvents";
             this.listBoxEvents.Size = new System.Drawing.Size(399, 192);
             this.listBoxEvents.TabIndex = 13;
-            this.listBoxEvents.SelectedIndexChanged += new System.EventHandler(this.listBoxEvents_SelectedIndexChanged);
             // 
             // tabFriends
             // 
@@ -287,41 +385,41 @@
             this.gridViewPlacesList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.gridViewPlacesList.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.gridViewPlacesList.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridViewPlacesList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridViewPlacesList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gridViewPlacesList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridViewPlacesList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.placeNameColumn,
             this.addressColumn,
             this.isOpenColumn});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridViewPlacesList.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridViewPlacesList.DefaultCellStyle = dataGridViewCellStyle4;
             this.gridViewPlacesList.EnableHeadersVisualStyles = false;
             this.gridViewPlacesList.GridColor = System.Drawing.Color.Gray;
             this.gridViewPlacesList.Location = new System.Drawing.Point(482, 428);
             this.gridViewPlacesList.MultiSelect = false;
             this.gridViewPlacesList.Name = "gridViewPlacesList";
             this.gridViewPlacesList.ReadOnly = true;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gridViewPlacesList.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridViewPlacesList.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.gridViewPlacesList.RowHeadersVisible = false;
             this.gridViewPlacesList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridViewPlacesList.Size = new System.Drawing.Size(554, 212);
@@ -331,8 +429,8 @@
             // placeNameColumn
             // 
             this.placeNameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.placeNameColumn.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.placeNameColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.placeNameColumn.HeaderText = "Place Name";
             this.placeNameColumn.Name = "placeNameColumn";
             this.placeNameColumn.ReadOnly = true;
@@ -349,8 +447,8 @@
             // isOpenColumn
             // 
             this.isOpenColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.isOpenColumn.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.isOpenColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.isOpenColumn.HeaderText = "Open/Close";
             this.isOpenColumn.Name = "isOpenColumn";
             this.isOpenColumn.ReadOnly = true;
@@ -509,23 +607,23 @@
             this.chartAvgLikesPerHour.BackColor = System.Drawing.Color.Transparent;
             this.chartAvgLikesPerHour.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Bottom;
             this.chartAvgLikesPerHour.BorderlineColor = System.Drawing.Color.Transparent;
-            chartArea2.BackSecondaryColor = System.Drawing.Color.Transparent;
-            chartArea2.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            chartArea2.Name = "ChartArea";
-            chartArea2.Visible = false;
-            this.chartAvgLikesPerHour.ChartAreas.Add(chartArea2);
+            chartArea1.BackSecondaryColor = System.Drawing.Color.Transparent;
+            chartArea1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            chartArea1.Name = "ChartArea";
+            chartArea1.Visible = false;
+            this.chartAvgLikesPerHour.ChartAreas.Add(chartArea1);
             this.chartAvgLikesPerHour.Location = new System.Drawing.Point(601, 100);
             this.chartAvgLikesPerHour.Name = "chartAvgLikesPerHour";
             this.chartAvgLikesPerHour.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series2.ChartArea = "ChartArea";
-            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(89)))), ((int)(((byte)(152)))));
-            series2.IsVisibleInLegend = false;
-            series2.IsXValueIndexed = true;
-            series2.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            series2.Name = "AvgLikesPerHour";
-            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.UInt32;
-            series2.YValuesPerPoint = 2;
-            this.chartAvgLikesPerHour.Series.Add(series2);
+            series1.ChartArea = "ChartArea";
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(89)))), ((int)(((byte)(152)))));
+            series1.IsVisibleInLegend = false;
+            series1.IsXValueIndexed = true;
+            series1.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            series1.Name = "AvgLikesPerHour";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.UInt32;
+            series1.YValuesPerPoint = 2;
+            this.chartAvgLikesPerHour.Series.Add(series1);
             this.chartAvgLikesPerHour.Size = new System.Drawing.Size(435, 226);
             this.chartAvgLikesPerHour.TabIndex = 1019;
             // 
@@ -533,8 +631,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(1080, 657);
+            this.ClientSize = new System.Drawing.Size(1100, 728);
             this.Controls.Add(this.pictureBoxPlaceToolTip);
             this.Controls.Add(this.pictureBoxGraphTooltip);
             this.Controls.Add(this.pictureBoxUser);
@@ -563,8 +662,10 @@
             this.Text = "Faecbook";
             this.tabControlUserData.ResumeLayout(false);
             this.tabEvents.ResumeLayout(false);
-            this.tabEvents.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEventPicture)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.eventBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageNormalPictureBox)).EndInit();
             this.tabFriends.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFriendPic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarRadius)).EndInit();
@@ -603,11 +704,7 @@
         private System.Windows.Forms.TextBox textBoxKeyWord;
         private System.Windows.Forms.PictureBox UserPictureBox;
         private System.Windows.Forms.Label labelUserName;
-        private System.Windows.Forms.PictureBox pictureBoxEventPicture;
-        private System.Windows.Forms.Label labelSelectedEventLocation;
-        private System.Windows.Forms.Label labelSelectedEventDate;
         private System.Windows.Forms.Button buttonAvgLikes;
-        private System.Windows.Forms.Label labelEventDescription;
         private System.Windows.Forms.CheckBox checkBoxCheckin;
         private System.Windows.Forms.Label labelLastCheckinPlace;
         private System.Windows.Forms.PictureBox pictureBoxLoadingGif;
@@ -616,5 +713,13 @@
         private System.Windows.Forms.PictureBox pictureBoxPlaceToolTip;
         private System.Windows.Forms.ToolTip toolTipDescription;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartAvgLikesPerHour;
+        private System.Windows.Forms.BindingSource eventBindingSource;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lableEndTime;
+        private System.Windows.Forms.PictureBox imageNormalPictureBox;
+        private System.Windows.Forms.LinkLabel linkLableLink;
+        private System.Windows.Forms.Label lableStartTime;
+        private System.Windows.Forms.Label lableName;
+        private System.Windows.Forms.Label labelLocation;
     }
 }
