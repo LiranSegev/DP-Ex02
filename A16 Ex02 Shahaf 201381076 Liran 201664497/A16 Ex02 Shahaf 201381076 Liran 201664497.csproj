@@ -52,9 +52,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiBase.cs" />
     <Compile Include="Controller.cs" />
+    <Compile Include="CostumControls\ControlConfiguration.cs" />
+    <Compile Include="CostumControls\IControlBuilder.cs" />
+    <Compile Include="CostumControls\StatusPanelBuilder.cs" />
     <Compile Include="FBPlace\FbPlacePageID.cs" />
-    <Compile Include="FBPlace\FbPlaceSearchWrapper.cs" />
+    <Compile Include="FBPlace\FbPlaceAPI.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,7 +66,7 @@
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="GooglePlaces\GooglePlace.cs" />
-    <Compile Include="GooglePlaces\GooglePlaceApiWrapper.cs" />
+    <Compile Include="GooglePlaces\GooglePlaceAPI.cs" />
     <Compile Include="GooglePlaces\GooglePlacesApiResponse.cs" />
     <Compile Include="MustLikesStatisticsHourUtils.cs" />
     <Compile Include="GooglePlaces\OpeningHours.cs" />
@@ -73,7 +77,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="CostumControls\StatusComponent.cs">
+    <Compile Include="CostumControls\StatusPanel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UserPostsForDictionary.cs" />

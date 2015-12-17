@@ -22,16 +22,9 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
             m_AvrageLikesPerPost = io_PostFromUser.LikedBy.Count;
         }
 
-        public void GetAvrageLikes()
+        public double GetAvrageLikes()
         {
-            if (m_NumberOfLikesForPosts == 0)
-            {
-                m_AvrageLikesPerPost = 0;
-            }
-            else
-            {
-                m_AvrageLikesPerPost = m_NumberOfLikesForPosts / m_NumberOfPosts;
-            }
+            return m_NumberOfLikesForPosts / m_NumberOfPosts;
         }
 
         public void addPost(Post i_PostFromUser)

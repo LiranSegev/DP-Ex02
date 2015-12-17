@@ -512,7 +512,7 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
             this.pictureBoxPlaceToolTip.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxPlaceToolTip.TabIndex = 1025;
             this.pictureBoxPlaceToolTip.TabStop = false;
-            this.toolTipDescription.SetToolTip(this.pictureBoxPlaceToolTip, "Press for near places.");
+            this.toolTipDescription.SetToolTip(this.pictureBoxPlaceToolTip, "Press for near places.\r\ne.g: Food Pizza.");
             // 
             // pictureBoxGraphTooltip
             // 

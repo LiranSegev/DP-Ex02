@@ -4,6 +4,7 @@ using System.Threading;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using FacebookWrapper.ObjectModel;
+using A16_Ex01_Shahaf_201381076_Liran_201664497.CostumControls;
 
 namespace A16_Ex01_Shahaf_201381076_Liran_201664497
 {
@@ -12,7 +13,7 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
         public formMain()
         {
             InitializeComponent();
-            FacebookWrapper.FacebookService.s_CollectionLimit = 100;
+            FacebookWrapper.FacebookService.s_CollectionLimit = 5;
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
@@ -66,20 +67,21 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
 
         private void listBoxPostsFilling()
         {
-            FacebookObjectCollection<Post> posts = Controller.GetUnEmptyUserPosts();
+            FacebookObjectCollection<Status> statuses = Controller.GetUnEmptyUserPosts();
             int top = 0;
 
-            foreach (Post post in posts)
+            foreach (Status status in statuses)
             {
-                StatusComponent statusComponent = new StatusComponent(new Size(tabWall.Width, 50));
-                tabWall.Controls.Add(statusComponent);
-                statusComponent.Top = top;
-                statusComponent.m_LabelStatus.Text = post.Message;
-                statusComponent.m_LabelLikes.Text = post.LikedBy.Count.ToString();
-                statusComponent.m_LabelDate.Text = post.CreatedTime.ToString();
+                StatusPanel statusPanel = new StatusPanelBuilder()
+                        .AddConfiguration(new ControlConfiguration(new Size(tabWall.Size.Width - SystemInformation.VerticalScrollBarWidth, 135)))
+                        .AddImage((Image)(Properties.Resources.ResourceManager.GetObject("Likes")))
+                        .AddStatus(status)
+                        .Build();
 
-
-                top = statusComponent.Bottom + 5;
+                tabWall.Controls.Add(statusPanel);
+                statusPanel.Fit();
+                statusPanel.Top = top;
+                top = statusPanel.Bottom + 5;
             }
         }
 
@@ -200,7 +202,6 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
         private void threadChartUpdate()
         {
             string chartName = "AvgLikesPerHour";
-            MustLikesStatisticsHourUtils MustLikedPostHour = new MustLikesStatisticsHourUtils();
             SortedDictionary<int, UserPostsForDictionary> avgLikes = Controller.GetAvgLikesPerHour();
             this.Invoke((MethodInvoker)delegate
             {

@@ -38,9 +38,9 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
             return m_LoggedInUser.Events;
         }
 
-        public static FacebookObjectCollection<Post> GetUnEmptyUserPosts()
+        public static FacebookObjectCollection<Status> GetUnEmptyUserPosts()
         {
-            FacebookObjectCollection<Post> userPost = m_LoggedInUser.Posts;
+            FacebookObjectCollection<Status> userPost = m_LoggedInUser.Statuses;
 
             for (int i = 0; i < userPost.Count; i++)
             {
@@ -57,7 +57,7 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
         {
             return m_LoggedInUser.Friends;
         }
-
+        
         public static List<GooglePlace> GetRecommendedPlaces(string i_keyWord, int i_userSelectedRadius)
         {
             FacebookObjectCollection<Checkin> userCheckins = m_LoggedInUser.Checkins;
@@ -71,7 +71,8 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
             GooglePlacesApiResponse response = new GooglePlacesApiResponse();
             if (!string.IsNullOrEmpty(i_keyWord) && lastCheckin.Place != null)
             {
-                response = GooglePlaceApiWrapper.GetPlaces(lastCheckin.Place.Location.Latitude, lastCheckin.Place.Location.Longitude, i_userSelectedRadius, i_keyWord);
+                Location location = lastCheckin.Place.Location;
+                response = GooglePlaceAPI.GetPlaces(location.Latitude, location.Longitude, i_userSelectedRadius, i_keyWord);
                 response.ChangeEncodingResponseToUTF8();
                 if (response.m_ResponseStatus != "OK")
                 {
@@ -97,7 +98,7 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
         {
             try
             {
-                FbPlacePageID placePageId = FbPlaceSearchWrapper.getPlacePage(i_Place, m_Result);
+                FbPlacePageID placePageId = FbPlaceAPI.getPlacePage(i_Place, m_Result);
                 return m_LoggedInUser.Checkin(placePageId.m_ID);
             }
             catch (Exception)

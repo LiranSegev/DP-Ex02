@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace A16_Ex01_Shahaf_201381076_Liran_201664497
 {
-    public static class FbPlaceSearchWrapper
+    public static class FbPlaceAPI
     {
         private static string r_GraphFacebookSearchHost = @"https://graph.facebook.com/search?";
 
