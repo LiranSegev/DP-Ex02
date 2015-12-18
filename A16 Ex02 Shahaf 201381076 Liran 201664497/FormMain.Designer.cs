@@ -47,7 +47,7 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
             this.textBoxStatus = new System.Windows.Forms.TextBox();
             this.buttonPost = new System.Windows.Forms.Button();
             this.tabControlUserData = new System.Windows.Forms.TabControl();
-            this.tabWall = new System.Windows.Forms.TabPage();
+            this.tabStatus = new System.Windows.Forms.TabPage();
             this.tabEvents = new System.Windows.Forms.TabPage();
             this.panelEventDetails = new System.Windows.Forms.Panel();
             this.lableName = new System.Windows.Forms.Label();
@@ -181,7 +181,7 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
             // tabControlUserData
             // 
             this.tabControlUserData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.tabControlUserData.Controls.Add(this.tabWall);
+            this.tabControlUserData.Controls.Add(this.tabStatus);
             this.tabControlUserData.Controls.Add(this.tabEvents);
             this.tabControlUserData.Controls.Add(this.tabFriends);
             this.tabControlUserData.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -193,17 +193,17 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
             this.tabControlUserData.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControlUserData.TabIndex = 13;
             // 
-            // tabWall
+            // tabStatus
             // 
-            this.tabWall.AutoScroll = true;
-            this.tabWall.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(89)))), ((int)(((byte)(152)))));
-            this.tabWall.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tabWall.Location = new System.Drawing.Point(4, 34);
-            this.tabWall.Name = "tabWall";
-            this.tabWall.Padding = new System.Windows.Forms.Padding(3);
-            this.tabWall.Size = new System.Drawing.Size(405, 364);
-            this.tabWall.TabIndex = 0;
-            this.tabWall.Text = "Wall";
+            this.tabStatus.AutoScroll = true;
+            this.tabStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(89)))), ((int)(((byte)(152)))));
+            this.tabStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabStatus.Location = new System.Drawing.Point(4, 34);
+            this.tabStatus.Name = "tabStatus";
+            this.tabStatus.Padding = new System.Windows.Forms.Padding(3);
+            this.tabStatus.Size = new System.Drawing.Size(405, 364);
+            this.tabStatus.TabIndex = 0;
+            this.tabStatus.Text = "Statuses";
             // 
             // tabEvents
             // 
@@ -687,7 +687,7 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
         private System.Windows.Forms.Button buttonLogin;
         private System.Windows.Forms.Button buttonPost;
         private System.Windows.Forms.TabControl tabControlUserData;
-        private System.Windows.Forms.TabPage tabWall;
+        private System.Windows.Forms.TabPage tabStatus;
         private System.Windows.Forms.TabPage tabEvents;
         private System.Windows.Forms.TabPage tabFriends;
         private System.Windows.Forms.ListBox listBoxEvents;

@@ -68,20 +68,22 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
         private void listBoxPostsFilling()
         {
             FacebookObjectCollection<Status> statuses = Controller.GetUnEmptyUserPosts();
-            int top = 0;
+            int PanelTop = 0;
+            Size panelSize = new Size(tabStatus.Size.Width - SystemInformation.VerticalScrollBarWidth, 135);
+            string ImageFileName = "Likes";
 
             foreach (Status status in statuses)
             {
                 StatusPanel statusPanel = new StatusPanelBuilder()
-                        .AddConfiguration(new ControlConfiguration(new Size(tabWall.Size.Width - SystemInformation.VerticalScrollBarWidth, 135)))
-                        .AddImage((Image)(Properties.Resources.ResourceManager.GetObject("Likes")))
+                        .AddConfiguration(new ControlConfiguration { m_Size = panelSize })
+                        .AddImage((Image)(Properties.Resources.ResourceManager.GetObject(ImageFileName)))
                         .AddStatus(status)
                         .Build();
 
-                tabWall.Controls.Add(statusPanel);
+                tabStatus.Controls.Add(statusPanel);
                 statusPanel.Fit();
-                statusPanel.Top = top;
-                top = statusPanel.Bottom + 5;
+                statusPanel.Top = PanelTop;
+                PanelTop = statusPanel.Bottom + 5;
             }
         }
 
@@ -144,7 +146,7 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
             gridViewPlacesList.Rows.Clear();
             try
             {
-                List<GooglePlace> recPlaces = Controller.GetRecommendedPlaces(textBoxKeyWord.Text, trackBarRadius.Value);
+                List<Place> recPlaces = Controller.GetRecommendedPlaces(textBoxKeyWord.Text, trackBarRadius.Value);
                 if (recPlaces.Count == 0)
                 {
                     gridViewPlacesList.Rows.Add(" - ", "Places Not Found", " - ");
@@ -160,9 +162,9 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
             }
         }
 
-        private void addPlaceToGridView(List<GooglePlace> i_Places)
+        private void addPlaceToGridView(List<Place> i_Places)
         {
-            foreach (GooglePlace googlePlace in i_Places)
+            foreach (Place googlePlace in i_Places)
             {
                 string openingHours = "Unknown";
                 if (googlePlace.m_OpeningHours != null)

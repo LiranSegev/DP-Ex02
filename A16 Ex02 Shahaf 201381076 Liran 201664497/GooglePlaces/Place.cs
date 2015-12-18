@@ -2,7 +2,7 @@
 
 namespace A16_Ex01_Shahaf_201381076_Liran_201664497
 {
-    public class GooglePlace
+    public class Place
     {
         [JsonProperty(PropertyName = "name")]
         public string m_Name { get; set; }

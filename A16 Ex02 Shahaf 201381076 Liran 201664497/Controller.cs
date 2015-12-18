@@ -58,7 +58,7 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
             return m_LoggedInUser.Friends;
         }
         
-        public static List<GooglePlace> GetRecommendedPlaces(string i_keyWord, int i_userSelectedRadius)
+        public static List<Place> GetRecommendedPlaces(string i_keyWord, int i_userSelectedRadius)
         {
             FacebookObjectCollection<Checkin> userCheckins = m_LoggedInUser.Checkins;
 
