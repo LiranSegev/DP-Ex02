@@ -4,11 +4,14 @@ using System.Text;
 using System.Linq;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace A16_Ex01_Shahaf_201381076_Liran_201664497
 {
     public static class Controller
     {
+
         public static User m_LoggedInUser { get; set; }
 
         public static LoginResult m_Result { get; set; }
@@ -17,9 +20,11 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
         {
             string appID = "542892732526619";
             string[] permissions = new string[] { "user_about_me", "user_friends", "publish_actions", "user_events", "user_posts", "user_photos", "user_status" };
+            FacebookWrapper.FacebookService.s_CollectionLimit = 60;
+
             m_Result = FacebookService.Login(appID, permissions);
             m_LoggedInUser = m_Result.LoggedInUser;
-
+            
             return string.IsNullOrEmpty(m_Result.AccessToken) ? false : true;
         }
 
@@ -33,31 +38,24 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
             return m_LoggedInUser.Name;
         }
 
-        public static FacebookObjectCollection<Event> GetUserEvents()
+        public static List<Event> GetUserEvents()
         {
-            return m_LoggedInUser.Events;
+            return m_LoggedInUser.Events.ToList<Event>();
         }
 
-        public static FacebookObjectCollection<Status> GetUnEmptyUserPosts()
+        public static List<Status> GetUserStatuses()
         {
-            FacebookObjectCollection<Status> userPost = m_LoggedInUser.Statuses;
+            FacebookObjectCollection<Status> userStatuses = m_LoggedInUser.Statuses;
+            List<Status> statuses = userStatuses.Where(s => !String.IsNullOrEmpty(s.Message)).ToList<Status>();
 
-            for (int i = 0; i < userPost.Count; i++)
-            {
-                if (userPost[i].Message == null)
-                {
-                    userPost.RemoveAt(i);
-                }
-            }
-
-            return userPost;
+            return statuses;
         }
 
-        public static FacebookObjectCollection<User> GetUserFriends()
+        public static List<User> GetUserFriends()
         {
-            return m_LoggedInUser.Friends;
+            return m_LoggedInUser.Friends.ToList<User>();
         }
-        
+
         public static List<Place> GetRecommendedPlaces(string i_keyWord, int i_userSelectedRadius)
         {
             FacebookObjectCollection<Checkin> userCheckins = m_LoggedInUser.Checkins;
@@ -87,7 +85,7 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
             return response.m_Places;
         }
 
-        public static SortedDictionary<int, UserPostsForDictionary> GetAvgLikesPerHour()
+        public static SortedDictionary<int, LikesAggregation> GetAvgLikesPerHour()
         {
             MustLikesStatisticsHourUtils MustLikedPostHour = new MustLikesStatisticsHourUtils();
 

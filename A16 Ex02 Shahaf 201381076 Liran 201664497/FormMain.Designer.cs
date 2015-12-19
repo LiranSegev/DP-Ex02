@@ -540,7 +540,7 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
             // 
             this.pictureBoxLoadingGif.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxLoadingGif.Image = global::A16_Ex01_Shahaf_201381076_Liran_201664497.Properties.Resources.LoadingGif;
-            this.pictureBoxLoadingGif.Location = new System.Drawing.Point(733, 169);
+            this.pictureBoxLoadingGif.Location = new System.Drawing.Point(786, 167);
             this.pictureBoxLoadingGif.Name = "pictureBoxLoadingGif";
             this.pictureBoxLoadingGif.Size = new System.Drawing.Size(64, 64);
             this.pictureBoxLoadingGif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;

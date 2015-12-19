@@ -12,8 +12,8 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
     {
         public formMain()
         {
+            
             InitializeComponent();
-            FacebookWrapper.FacebookService.s_CollectionLimit = 5;
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
@@ -25,7 +25,7 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
                 labelUserName.Text = Controller.GetUserName();
                 labelUserName.Visible = true;
                 setButtonsVisible();
-                fetchUserPicture();
+                addUserPicture();
                 new Thread(addTabsItems).Start();
             }
         }
@@ -35,9 +35,9 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
             tabControlUserData.Invoke(new Action(
                 () =>
                 {
-                    listBoxPostsFilling();
-                    listBoxEventsFilling();
-                    listBoxFriendsFilling();
+                    addStatuses();
+                    addEvents();
+                    addFriends();
                 }
                         ));
         }
@@ -53,41 +53,41 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
             }
         }
 
-        private void fetchUserPicture()
+        private void addUserPicture()
         {
             UserPictureBox.LoadAsync(Controller.GetUserProfilePicture());
         }
 
-        private void listBoxEventsFilling()
+        private void addEvents()
         {
             listBoxEvents.DisplayMember = "Name";
             eventBindingSource.DataSource = Controller.GetUserEvents();
 
         }
 
-        private void listBoxPostsFilling()
+        private void addStatuses()
         {
-            FacebookObjectCollection<Status> statuses = Controller.GetUnEmptyUserPosts();
+            List<Status> statuses = Controller.GetUserStatuses();
             int PanelTop = 0;
             Size panelSize = new Size(tabStatus.Size.Width - SystemInformation.VerticalScrollBarWidth, 135);
             string ImageFileName = "Likes";
+            Image image = (Image)(Properties.Resources.ResourceManager.GetObject(ImageFileName));
 
             foreach (Status status in statuses)
             {
                 StatusPanel statusPanel = new StatusPanelBuilder()
-                        .AddConfiguration(new ControlConfiguration { m_Size = panelSize })
-                        .AddImage((Image)(Properties.Resources.ResourceManager.GetObject(ImageFileName)))
+                        .AddConfiguration(new ControlConfiguration { Size = panelSize })
+                        .AddImage(image)
                         .AddStatus(status)
                         .Build();
 
                 tabStatus.Controls.Add(statusPanel);
-                statusPanel.Fit();
                 statusPanel.Top = PanelTop;
                 PanelTop = statusPanel.Bottom + 5;
             }
         }
 
-        private void listBoxFriendsFilling()
+        private void addFriends()
         {
             listBoxFriend.DisplayMember = "Name";
             listBoxFriend.DataSource = Controller.GetUserFriends();
@@ -95,10 +95,10 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
 
         private void friendsListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ShowFriendPicture();
+            showSelectedFriendPicture();
         }
 
-        private void ShowFriendPicture()
+        private void showSelectedFriendPicture()
         {
             if (listBoxFriend.SelectedItems.Count == 1)
             {
@@ -131,7 +131,7 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
             textBoxStatus.Text = string.Empty;
             textBoxStatus.ForeColor = System.Drawing.Color.Black;
         }
-
+        
         private void trackBarRadius_ValueChanged(object sender, EventArgs e)
         {
             labelRadius.Text = "Radius";
@@ -204,7 +204,7 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
         private void threadChartUpdate()
         {
             string chartName = "AvgLikesPerHour";
-            SortedDictionary<int, UserPostsForDictionary> avgLikes = Controller.GetAvgLikesPerHour();
+            SortedDictionary<int, LikesAggregation> avgLikes = Controller.GetAvgLikesPerHour();
             this.Invoke((MethodInvoker)delegate
             {
                 if (chartAvgLikesPerHour.Series[chartName].Points.Count != 0)
@@ -212,9 +212,9 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
                     chartAvgLikesPerHour.Series[chartName].Points.Clear();
                 }
 
-                foreach (KeyValuePair<int, UserPostsForDictionary> entry in avgLikes)
+                foreach (KeyValuePair<int, LikesAggregation> entry in avgLikes)
                 {
-                    chartAvgLikesPerHour.Series[chartName].Points.AddXY(entry.Key, entry.Value.m_AvrageLikesPerPost);
+                    chartAvgLikesPerHour.Series[chartName].Points.AddXY(entry.Key, entry.Value.GetAvrageLikes());
                 }
 
                 pictureBoxLoadingGif.Visible = false;

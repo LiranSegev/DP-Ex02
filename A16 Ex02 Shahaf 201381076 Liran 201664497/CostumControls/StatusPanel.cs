@@ -8,9 +8,9 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
     public class StatusPanel : Panel
     {
         public Label m_LabelStatus { get; set; }
-        
+
         public Label m_LabelDate { get; set; }
-        
+
         public Label m_LabelLikes { get; set; }
 
         public PictureBox m_pictureBoxLikes { get; set; }
@@ -24,21 +24,26 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
 
         public StatusPanel(Size i_Size)
         {
+            this.Size = i_Size;
             m_LabelStatus = new Label();
             m_LabelDate = new Label();
             m_LabelLikes = new Label();
             m_pictureBoxLikes = new PictureBox();
-
-            setDefaultProperties(i_Size);
         }
 
-        private void setDefaultProperties(Size i_Size)
+        protected override void InitLayout()
         {
-            this.BackColor = Color.FromArgb(75, Color.White);
-            this.BorderStyle = BorderStyle.None;
-            this.Size = i_Size;
+            base.InitLayout();
+            setDefaultProperties();
+            calculateResize();
+        }
 
-            setLableStatus(i_Size);
+        private void setDefaultProperties()
+        {
+           this.BorderStyle = BorderStyle.None;
+           this.FontChanged += StatusPanel_FontChanged;
+
+            setLableStatus();
             setPictureBoxLikes();
             setLableLikes();
             setLableDate();
@@ -46,17 +51,26 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
             this.Controls.AddRange(new Control[] { m_LabelStatus, m_LabelDate, m_LabelLikes, m_pictureBoxLikes });
         }
 
-        private void setLableStatus(Size i_Size)
+        void StatusPanel_FontChanged(object sender, EventArgs e)
+        {
+            foreach (Control control in this.Controls)
+            {
+                control.Font = this.Font;
+            }
+        }
+
+        private void setLableStatus()
         {
             this.m_LabelStatus.Dock = System.Windows.Forms.DockStyle.Top;
             this.m_LabelStatus.AutoSize = true;
-            this.m_LabelStatus.MaximumSize = i_Size;
+            this.m_LabelStatus.MaximumSize = this.Size;
             this.m_LabelStatus.BackColor = Color.Transparent;
         }
 
         private void setPictureBoxLikes()
         {
             int pictureBoxSize = this.Size.Height / 4;
+           
             this.m_pictureBoxLikes.Anchor = (AnchorStyles)(AnchorStyles.Bottom | AnchorStyles.Left);
             this.m_pictureBoxLikes.Size = new Size(pictureBoxSize, pictureBoxSize);
             this.m_pictureBoxLikes.Location = new Point(this.Left + 5, this.Bottom - pictureBoxSize - 10);
@@ -80,12 +94,7 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
             this.m_LabelDate.BackColor = Color.Transparent;
         }
 
-        private void setDefaultProperties(Control i_Control)
-        {
-            i_Control.BackColor = Color.Transparent;
-        }
-
-        public void Fit()
+        private void calculateResize()
         {
             this.Size = new Size(this.Width, m_LabelLikes.Height + m_LabelStatus.Height + 50);
             this.m_LabelLikes.Location = new Point(this.m_pictureBoxLikes.Right + 5, (m_pictureBoxLikes.Top + m_pictureBoxLikes.Bottom) / 2);

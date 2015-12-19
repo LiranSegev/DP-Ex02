@@ -65,7 +65,7 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="GooglePlaces\GooglePlace.cs" />
+    <Compile Include="GooglePlaces\Place.cs" />
     <Compile Include="GooglePlaces\GooglePlaceAPI.cs" />
     <Compile Include="GooglePlaces\GooglePlacesApiResponse.cs" />
     <Compile Include="MustLikesStatisticsHourUtils.cs" />
@@ -80,7 +80,7 @@
     <Compile Include="CostumControls\StatusPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="UserPostsForDictionary.cs" />
+    <Compile Include="LikesAggregation.cs" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
