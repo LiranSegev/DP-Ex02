@@ -4,6 +4,7 @@ using System.Threading;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using FacebookWrapper.ObjectModel;
+using System.Windows.Forms.DataVisualization.Charting;
 using A16_Ex01_Shahaf_201381076_Liran_201664497.CostumControls;
 
 namespace A16_Ex01_Shahaf_201381076_Liran_201664497
@@ -216,12 +217,18 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
                 {
                     chartAvgLikesPerHour.Series[chartName].Points.AddXY(entry.Key, entry.Value.m_AvrageLikesPerPost);
                 }
-
+                PresentFavoriteHourOnPanelHour(chartAvgLikesPerHour);
                 pictureBoxLoadingGif.Visible = false;
                 buttonAvgLikes.Enabled = true;
                 chartAvgLikesPerHour.ChartAreas[0].Visible = true;
                 chartAvgLikesPerHour.Visible = true;
             });
+        }
+
+        private void PresentFavoriteHourOnPanelHour(Chart chartAvgLikesPerHour)
+        {
+            
+            
         }
 
         private void postCheckin()

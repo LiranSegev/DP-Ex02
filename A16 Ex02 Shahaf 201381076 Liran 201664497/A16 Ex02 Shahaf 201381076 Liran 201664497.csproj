@@ -81,6 +81,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="UserPostsForDictionary.cs" />
+    <EmbeddedResource Include="CostumControls\StatusPanel.resx">
+      <DependentUpon>StatusPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
