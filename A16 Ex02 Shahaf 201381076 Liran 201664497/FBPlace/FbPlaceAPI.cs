@@ -11,9 +11,9 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
     {
         private static string r_GraphFacebookSearchHost = @"https://graph.facebook.com/search?";
 
-        public static FbPlacePageID getPlacePage(string i_KeyWord, LoginResult i_LoginResult)
+        public static FbPlacePageID getPlacePage(string i_KeyWord, string i_AcceseeToken)
         {
-            string urlRequest = r_GraphFacebookSearchHost + string.Format("limit=1&type=place&q={0}&access_token={1}", i_KeyWord.Replace(" ", "+"), i_LoginResult.AccessToken);
+            string urlRequest = r_GraphFacebookSearchHost + string.Format("limit=1&type=place&q={0}&access_token={1}", i_KeyWord.Replace(" ", "+"), i_AcceseeToken);
             string jsonResponse = new WebClient().DownloadString(urlRequest);
             dynamic apiResponse = JsonConvert.DeserializeObject<dynamic>(jsonResponse);
             FbPlacePageID placePageID = JsonConvert.DeserializeObject<FbPlacePageID>(apiResponse.data[0].ToString());

@@ -12,7 +12,7 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
     {
         public formMain()
         {
-            
+
             InitializeComponent();
         }
 
@@ -131,7 +131,7 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
             textBoxStatus.Text = string.Empty;
             textBoxStatus.ForeColor = System.Drawing.Color.Black;
         }
-        
+
         private void trackBarRadius_ValueChanged(object sender, EventArgs e)
         {
             labelRadius.Text = "Radius";

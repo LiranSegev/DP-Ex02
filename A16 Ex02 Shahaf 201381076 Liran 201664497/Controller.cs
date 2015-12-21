@@ -24,7 +24,7 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
 
             m_Result = FacebookService.Login(appID, permissions);
             m_LoggedInUser = m_Result.LoggedInUser;
-            
+
             return string.IsNullOrEmpty(m_Result.AccessToken) ? false : true;
         }
 
@@ -87,16 +87,14 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
 
         public static SortedDictionary<int, LikesAggregation> GetAvgLikesPerHour()
         {
-            MustLikesStatisticsHourUtils MustLikedPostHour = new MustLikesStatisticsHourUtils();
-
-            return MustLikedPostHour.GetAvgLikesPerHour(m_LoggedInUser.Posts);
+            return new MustLikesStatisticsHourUtils().GetAvgLikesPerHour(m_LoggedInUser.Posts);
         }
 
         public static Checkin PostCheckin(string i_Place)
         {
             try
             {
-                FbPlacePageID placePageId = FbPlaceAPI.getPlacePage(i_Place, m_Result);
+                FbPlacePageID placePageId = FbPlaceAPI.getPlacePage(i_Place, m_Result.AccessToken);
                 return m_LoggedInUser.Checkin(placePageId.m_ID);
             }
             catch (Exception)

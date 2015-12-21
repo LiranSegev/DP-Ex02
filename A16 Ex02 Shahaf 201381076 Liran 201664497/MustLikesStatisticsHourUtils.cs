@@ -21,10 +21,10 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497
             {
                 foreach (Post post in i_UserPosts)
                 {
-                    if (post.CreatedTime != null)
+                    if (post.CreatedTime != null) //Lambda expression.
                     {
                         int postHour = post.CreatedTime.Value.Hour;
-                        if (likesPerHour.ContainsKey(postHour))
+                        if (likesPerHour.ContainsKey(postHour)) //Add key if absent.
                         {
                             likesPerHour[postHour].addPost(post);
                         }

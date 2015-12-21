@@ -67,7 +67,7 @@ namespace A16_Ex01_Shahaf_201381076_Liran_201664497.CostumControls
             }
             catch (Exception)
             {
-                System.Console.WriteLine("Can't set proprty [{0}], setting default.", p.Name);
+                System.Console.WriteLine("Can't set proprty [{0}], setting default.", property.Name);
             }
         }
     }
